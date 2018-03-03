@@ -59,7 +59,7 @@ toc:
 
 ## Comment system (Disqus) ##
 disqus:
-  shortname: mzaini30 #the Disqus shortname for the site
+  shortname: zenprogramming #the Disqus shortname for the site
 
 ## Comment system (gitalk) ##
 # please refer to https://github.com/gitalk/gitalk for more info.
