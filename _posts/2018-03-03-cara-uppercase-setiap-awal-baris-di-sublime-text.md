@@ -36,3 +36,5 @@ Lalu, pada kotak _replace_, ketikkan skrip berikut:
 ```regex
 \1\u\2
 ```
+
+Maka, secara otomatis, semua awal kalimat, menjadi _title case_.
