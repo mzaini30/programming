@@ -2,7 +2,7 @@
 layout: post
 title: Menghubungkan Domain di Idwebhost dengan Hosting di Github Pages
 date: 2018-03-03 13:36:00
-tags: [idwebhost, github]
+tags: [idwebhost, github, cname, dns]
 ---
 
 Ada yang tau nggak kalau situs ini, muhammadzaini.com menggunakan Github? Kok bisa ya? Nah, hostingnya memang di Github tapi domainnya menggunakan Idwebhost. Berikut ini caranya:
