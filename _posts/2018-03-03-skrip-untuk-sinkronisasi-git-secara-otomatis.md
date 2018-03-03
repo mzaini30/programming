@@ -1,26 +1,32 @@
 ---
 layout: post
-title: Cara Menghapus Semua File EXE di Flash Disk Menggunakan Linux
-date: 2018-03-03 12:57:00
-tags: [linux, bash]
+title: Skrip untuk Sinkronisasi Git Secara Otomatis
+date: 2018-03-03 12:59:00
+tags: [python, git]
 ---
 
-1. Buka Terminal
+1. Buka folder yang terhubung dengan git (Gitlab, Bitbucket, Github, dll). Contohnya saja folder yang terhubung adalah `manga (git)`
 
-2. Masuk ke perangkat. Kali ini, lokasi perangkat adalah `/dev/sdb1/` maka ketik perintah berikut
+2. Buat file baru dengan nama `upload.py` lalu buka dengan aplikasi penyunting teks dan ketik skrip di bawah ini
 
-    ```bash
-    cd "/dev/sdb1"
+    ```python
+    import time, os
+
+    git = """git status
+    git add -A .
+    git commit -m "oke"
+    git push"""
+
+    while True:
+        os.system(git)
+        print
+        time.sleep(180)
     ```
 
-3. Ketik perintah berikut untuk menampilkan semua file `exe`
+3. Di folder tersebut, buka Terminal lalu ketikkan perintah berikut
 
     ```bash
-    find -iname "*.exe"
+    python upload.py
     ```
 
-4. Ketik perintah berikut untuk menghapus permanen semua file `exe` di perangkat tersebut
-
-    ```bash
-    find -iname "*.exe" -exec rm {} \;
-    ```
+4. Maka, secara otomatis, setiap tiga menit, folder tersebut akan tersinkronisasi dengan git
