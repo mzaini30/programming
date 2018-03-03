@@ -2,104 +2,34 @@
 layout: post
 title: Pasang MDC Daily di Blog
 date: 2018-03-03 13:46:00
-tags: [java, xml, android]
+tags: [html, javascript]
 ---
 
-Layout:
+Sudah tau dengan yang namanya MDC kan? Yap, Muslim Designer Community. Komunitas ini adalah perkumpulan para desainer muslim yang mendedikasikan karyanya untuk menyebarkan dakwah Islam dengan kemasan yang lebih mudah dicerna. Nah, kali ini saya akan membagikan gadget blog untuk menampilkan desain-desain dari MDC setiap hari.
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+Berikut ini adalah langkah-langkahnya:
 
-    <WebView
-       android:id="@+id/webview01"
-       android:layout_height="wrap_content"
-       android:layout_width="fill_parent"
-       android:layout_weight="1">
-   </WebView>
+1. Pada `Tata Letak`, pilih `Tambahkan Gadget` lalu pilih `HTML/JavaScript` (untuk blogspot). Sedangkan kalau untuk Wordpress, pilih `Tampilan`, `Widget`, pilih `Teks`
 
-</LinearLayout>
-```
+2. Masukkan skrip berikut:
 
-Skrip Java:
+    ```html
+    <p>
+        <img src="" class="mdc-daily" style="width: 100%;">
+    </p>
+    <center>
+        <p>
+            <small>
+                <a href="http://muhammadzaini.com/2018/02/12/yuk-pasang-gadget-mdc-daily-di-blog.html">get widget</a>
+            </small>
+        </p>
+    </center>
+    <script type="text/javascript">
+        document.writeln('<scr'+'ipt type=\"text/javascript\" src=\'http://muhammadzaini.com/mdc-daily/data.js?'+Math.random()+'\'></scr'+'ipt>');
+        document.writeln('<scr'+'ipt type=\"text/javascript\" src=\'http://muhammadzaini.com/mdc-daily/app.js?'+Math.random()+'\'></scr'+'ipt>');
+    </script>
+    ```
 
-```java
-package com.mzaini30.puasa2018;
+Kalau sudah jadi, tampilannya akan seperti ini:
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.Window;
-//import android.view.WindowManager;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
- 
-/*
- * Demo of creating an application to open any URL inside the application and clicking on any link from that URl
-should not open Native browser but  that URL should open in the same screen.
- */
-public class Puasa2018Activity extends Activity {
-    /** Called when the activity is first created. */
- 
-    WebView web;
- 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.main);
-        
-        web = (WebView) findViewById(R.id.webview01);
-        web.setWebViewClient(new myWebClient());
-        web.getSettings().setJavaScriptEnabled(true);
-        web.loadUrl("file:///android_asset/index.html");
-    }
- 
-    public class myWebClient extends WebViewClient
-    {
-        @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            // TODO Auto-generated method stub
-            super.onPageStarted(view, url, favicon);
-        }
- 
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            // TODO Auto-generated method stub
- 
-        	if (url.contains("http://") || url.contains("https://")){
-        		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        		startActivity(i);
-        	} else {
-        		view.loadUrl(url);
-        	}
-            return true;
- 
-        }
-    }
- 
-    // To handle "Back" key press event for WebView to go back to previous screen.
-   @Override
-   public boolean onKeyDown(int keyCode, KeyEvent event)
-  {
-    if ((keyCode == KeyEvent.KEYCODE_BACK) && web.canGoBack()) {
-        web.goBack();
-        return true;
-    }
-    return super.onKeyDown(keyCode, event);
-   }
-}
-```
-
-Masukkan skrip berikut di dalam `Android Manifest` pada bagian `application` apabila aplikasi menayangkan video dari Youtube:
-
-```javascript
-android:hardwareAccelerated="true"
-```
+![](https://s25.postimg.org/h7d8b7p7z/Screenshot_from_2018-02-12_01_36_58.png)
