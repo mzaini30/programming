@@ -27,13 +27,13 @@ Nah, pada kata `beribu`, `namun`, dan `cahya`, kok nggak _title case_? Cara meng
 
 Pada kotak _find_, ketikkan skrip berikut:
 
-```regex
+```
 (^|\.\s|…\s)([a-z])
 ```
 
 Lalu, pada kotak _replace_, ketikkan skrip berikut:
 
-```regex
+```
 \1\u\2
 ```
 
