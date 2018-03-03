@@ -1,66 +1,40 @@
 ---
 layout: post
-title: Skrip Download dan Upload Ketika Menggunakan Git
-date: 2018-03-03 13:41:00
-tags: [git, command prompt, bash]
+title: Menampilkan Cuplikan Video Tanpa Menggunakan Aplikasi Pemotong Video
+date: 2018-03-03 13:43:00
+tags: [vlc]
 ---
 
-# Persiapan
+Terkadang ada kan ya, tugas dari dosen untuk menampilkan cuplikan dari suatu film lalu kita mengkajinya berdasarkan aspek-aspek tertentu. Misalnya untuk variabel percaya diri, ada aspek tahan banting, semangat menghadapi masa depan, _self efficacy_, ekstroversi, optimis, dan aktualisasi diri. Nah, dari keenam aspek tersebut, kita diminta untuk membuat cuplikan dari film tertentu. Kan repot ya, satu film kita potong-potong menjadi cuplikan-cuplikan tertentu. Terutama di bagian _rendering video_ yang lama. Nah, berikut ini ada skripnya supaya kita lebih cepat mengerjakannya.
 
-```bash
-git config --global user.name username
-git config --global user.email email
+1. Siapkan film yang akan kita buat cuplikan-cuplikannya. Untuk di tutorial ini, saya mencoba untuk menggunakan film berjudul `Fate/Apocrypha.mkv`.
+
+2. Lalu, kita buat misalnya cuplikan film untuk aspek pertama, yaitu tahan banting. Nah, berdasarkan film tersebut, ternyata kita menemukan bahwa untuk aspek tahan banting, adegannya muncul pada detik ke 100 hingga 112. Tulis dulu di kertas ya, 100 hingga 112.
+
+3. Buat berkas bernama `tahan banting.m3u`.
+
+4. Di dalam berkas tersebut, isi dengan skrip di bawah ini. Untuk mengisinya, bisa menggunakan Notepad atau Sublime Text.
+
+	```
+	#EXTVLCOPT:start-time=100
+	#EXTVLCOPT:stop-time=112
+	Fate/Apocrypha.mkv
+	```
+
+5. Untuk menjalankan skripnya, cukup buka berkas tersebut dengan VLC Player.
+
+# Untuk Aspek Tertentu yang Menggunakan Lebih dari Satu Cuplikan
+
+Misalnya, untuk aspek _self efficacy_, muncul pada detik ke 200 hingga 210 dan 250 hingga 300.
+
+Cara membuatnya masih sama seperti di atas. Namun, ada sedikit perbedaan di bagian skrip. Contoh skripnya adalah seperti di bawah ini:
+
 ```
+#EXTVLCOPT:start-time=200
+#EXTVLCOPT:stop-time=210
+Fate/Apocrypha.mkv
 
-# Linux
-
-## Download
-
-```bash
-git clone --depth=1 https://user:pass@gitlab.com/user/$1.git
-mv $1 "$1 (git)"
-```
-
-## Upload
-
-```bash
-while true
-    do
-        git status
-        git add -A .
-        git commit -m "oke"
-        git push
-        sleep 3m
-    done
-```
-
-# Windows
-
-## Download
-
-```shell
-@echo off
-title Download dari Gitlab
-
-set /p repo="Sebutkan nama repositori Gitlab: "
-
-git clone --depth=1 https://user:pass@gitlab.com/user/%repo%.git
-rename %repo% "%repo% (git)"
-pause
-```
-
-## Upload
-
-```shell
-@echo off
-title Upload
-
-:app
-git status
-git add -A .
-git commit -m "oke"
-git push
-
-timeout /t 180 /nobreak
-goto app
+#EXTVLCOPT:start-time=250
+#EXTVLCOPT:stop-time=300
+Fate/Apocrypha.mkv
 ```
