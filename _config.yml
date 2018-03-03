@@ -44,10 +44,10 @@ timezone: Asia/Hong_Kong #see https://en.wikipedia.org/wiki/List_of_tz_database_
 ## Author & social ##
 author:
   name: Zen
-  # email:  #your Email address e.g. someone@site.com
-  # facebook:  #your Facebook username
+  email: muhzaini30@gmail.com #your Email address e.g. someone@site.com
+  facebook: mzaini30 #your Facebook username
   # twitter:  #your Twitter username
-  # github:  #your GitHub username
+  github: mzaini30 #your GitHub username
   # googleplus:  #your Google+ username
   # weibo:  #your Weibo username
   # douban:  #your Douban username
@@ -59,7 +59,7 @@ toc:
 
 ## Comment system (Disqus) ##
 disqus:
-  # shortname:  #the Disqus shortname for the site
+  shortname: mzaini30 #the Disqus shortname for the site
 
 ## Comment system (gitalk) ##
 # please refer to https://github.com/gitalk/gitalk for more info.
@@ -87,7 +87,7 @@ leancloud:
 
 ## Paginate ##
 paginate: 7
-paginate_path: /blog/page:num
+paginate_path: /programming/page:num
 
 ## Post excerpts ##
 excerpt_separator: <!--more-->
