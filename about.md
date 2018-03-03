@@ -8,4 +8,3 @@ titles:
 key: page-about
 ---
 
-{% include youtube.html id="BzZroxr5IDQ" %}
