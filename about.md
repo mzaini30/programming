@@ -8,4 +8,4 @@ titles:
 key: page-about
 ---
 
-Hai, saya Zen. Programmer.
+{% include youtube.html id="BzZroxr5IDQ" %}
