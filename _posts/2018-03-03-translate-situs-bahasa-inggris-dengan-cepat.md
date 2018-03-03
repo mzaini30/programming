@@ -2,7 +2,7 @@
 layout: post
 title: Translate Situs Bahasa Inggris dengan Cepat
 date: 2018-03-03 12:25:00
-tags: []
+tags: [javascript]
 ---
 
 1. Misalkan situs yang akan kamu translate adalah <https://www.psychologytoday.com/blog/rethinking-thought/201706/learning-writing-fiction>
