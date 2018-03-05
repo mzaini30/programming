@@ -10,3 +10,37 @@ Gunakan atribut `markdown='1'` untuk elemen yang di dalamnya akan dimasukkan skr
 __Contoh 1__
 
 ```markdown
+Saat langit berwarna merah saga
+
+Dan kerikil perkasa berlarian
+
+Meluncur laksana puluhan peluru
+
+Terbang bersama teriakan takbir
+```
+
+__Contoh 2__
+
+```html
+<article>
+	<section>
+		
+	</section>
+</article>
+```
+
+Maka, kita gabungkan (dengan mengaktifkan atribut `markdown='1'`) menjadi seperti berikut:
+
+```html
+<article>
+	<section markdown='1'>
+Saat langit berwarna merah saga
+
+Dan kerikil perkasa berlarian
+
+Meluncur laksana puluhan peluru
+
+Terbang bersama teriakan takbir	
+	</section>
+</article>
+```
